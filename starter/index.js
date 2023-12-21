@@ -95,16 +95,16 @@ let length = finances.length;
 console.log('Total Months: ' + length);
 
 // Total net profit
-const sum = finances
-  .map( v => v[1] )                                
-  .reduce( (sum, current) => sum + current, 0 );
-  
+
+  var sum = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  sum += finances[i][1];
+}
+
 console.log('Total: $' + sum);
 
 // Average changes in profit/loss over period
-
-
-
 
 
 
