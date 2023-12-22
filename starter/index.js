@@ -87,24 +87,51 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.log('Financial Analysis')
-console.log('------------------')
 
-// Total number of months
 let length = finances.length;
-console.log('Total Months: ' + length);
-
-// Total net profit
 
   var sum = 0;
+  var change = 0;
+  var amount;
+  var date;
+  var previous = 0;
+  var netchangeSum = 0;
+  var average;
+  var increase=["", 0]
+  var decrease=["", 99999999999999999]
+
 
 for (var i = 0; i < finances.length; i++) {
-  sum += finances[i][1];
+date = finances[i][0]
+amount = finances[i][1]
+sum += amount
+
+
+if (i > 0) change = amount - previous 
+previous = amount
+netchangeSum += change
+
+if (change > increase[1]) {
+  increase= [date, change]
 }
 
-console.log('Total: $' + sum);
+if (change < decrease[1]) {
+  decrease = [date, change]
+}
 
-// Average changes in profit/loss over period
+}
+
+average = Math.round((netchangeSum /(finances.length-1))*100)/100;
+
+
+console.log('Financial Analysis')
+console.log('------------------')
+console.log('Total Months: ' + length);
+console.log('Total: $' + sum);
+console.log("Average Change: ", average);
+console.log("Greatest Increase in Profits/Losses: ", increase[0], "($", increase[1], ")");
+console.log("Greatest Decrease in Profits/Losses:", decrease[0], "($", decrease[1], ")");
+
 
 
 
