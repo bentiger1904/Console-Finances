@@ -32,4 +32,6 @@ When you open your code in the browser your resulting analysis should look simil
 
 Live site You can find the live site here - 
 
+![Console Output](https://github.com/bentiger1904/Console-Finances/assets/150267998/9894f143-903e-4dee-ade1-2991f261760c)
+
 License MIT License
